@@ -9,11 +9,22 @@ import org.springframework.stereotype.Component;
 public class Triangle implements Shape {
 	
 	List<Point> points = new ArrayList<Point>();
+	
+	String type;
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public void draw() {
 		for(Point point:points) {
 			System.out.println(point);
 		}
+		System.out.println("The triangle is of type: " + getType());
 	}
 
 	public void createDeafultShape() {
