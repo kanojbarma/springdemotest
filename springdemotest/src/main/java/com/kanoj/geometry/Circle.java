@@ -1,8 +1,10 @@
 package com.kanoj.geometry;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@Qualifier ("circleShape")
 public class Circle implements Shape {
 	
 	//@Autowired

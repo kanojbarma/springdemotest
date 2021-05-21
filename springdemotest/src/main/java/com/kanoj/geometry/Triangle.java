@@ -3,9 +3,12 @@ package com.kanoj.geometry;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+//default scope is singleton which means one instance per IoC container
+@Scope("prototype") 
 public class Triangle implements Shape {
 	
 	List<Point> points = new ArrayList<Point>();
