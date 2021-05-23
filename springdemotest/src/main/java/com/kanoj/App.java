@@ -15,7 +15,7 @@ public class App {
 		
 		/* This commented code works but your code get dependent on 
 		 * the implementation classes of Shape interface which should be 
-		 * avoided. This will require importing the impementation classes
+		 * avoided. This will require importing the implementation classes
 		 * Shape shape = (Shape) context.getBean(Circle.class); 
 		 * Shape shape = (Shape) context.getBean(Triangle.class);
 		 */
@@ -31,16 +31,23 @@ public class App {
 		//Shape shape = (Shape) context.getBean("circle"); // Works
 		// This also works bust does not require casting
 //		Shape shape = context.getBean("circle", Shape.class); 
-		Shape shape = context.getBean("circleShape", Shape.class); 
-		shape.createDeafultShape();
-		shape.draw();
+		Shape shapeCircle = context.getBean("circle", Shape.class);
+		shapeCircle.createDeafultShape();
+		shapeCircle.draw();
+		shapeCircle.computeArea();
+		shapeCircle.computePerimeter();
 		
-		shape = context.getBean("newShape", Shape.class);
-		shape.createDeafultShape();
-		shape.draw();
+		/*
+		 * Shape shapeTriangleDefConstructor = context.getBean("newShape", Shape.class);
+		 * shapeTriangleDefConstructor.createDeafultShape();
+		 * shapeTriangleDefConstructor.draw();
+		 */
 		
+		Shape shapeTriangleOverLoadedConstructor = 
+				context.getBean("triangle",Shape.class);
+		shapeTriangleOverLoadedConstructor.computeArea();
+		shapeTriangleOverLoadedConstructor.computePerimeter();
 		((AbstractApplicationContext) context).close();
-		
 		
 	}
 }

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 //import org.springframework.context.annotation.Import;
 
 import com.kanoj.geometry.Triangle;
+import com.kanoj.geometry.service.CalculatorService;
 
 /* This is the configuration class. This acts the spring XML configuration file.
  * Here we have to provide the base packages that it has to scan. All the beans under
@@ -28,7 +29,8 @@ public class AppConfig {
 	 * configuration annotation
 	 *  
 	 */	 
-	@Bean("newShape") 
-	 public Triangle getTriangle() { return new Triangle(); }
+	/*
+	 * @Bean("newShape") public Triangle getTriangle() { return new Triangle(); }
+	 */
 	 
 }
