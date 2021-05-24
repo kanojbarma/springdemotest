@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 //import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.PropertySource;
 
 import com.kanoj.geometry.Triangle;
 import com.kanoj.geometry.service.CalculatorService;
@@ -18,6 +19,7 @@ import com.kanoj.geometry.service.CalculatorService;
 @Configuration
 @ComponentScan(basePackages = "com.kanoj")
 //@Import(GeometryConfiguration.class)
+//@PropertySource("classpath: shape.properties")
 public class AppConfig {
 	
 	/*
@@ -29,8 +31,8 @@ public class AppConfig {
 	 * configuration annotation
 	 *  
 	 */	 
-	/*
-	 * @Bean("newShape") public Triangle getTriangle() { return new Triangle(); }
-	 */
+	
+	 @Bean("newShape") public Triangle getTriangle() { return new Triangle(); }
+	 
 	 
 }

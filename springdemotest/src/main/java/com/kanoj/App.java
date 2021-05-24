@@ -37,17 +37,17 @@ public class App {
 		shapeCircle.computeArea();
 		shapeCircle.computePerimeter();
 		
-		/*
-		 * Shape shapeTriangleDefConstructor = context.getBean("newShape", Shape.class);
-		 * shapeTriangleDefConstructor.createDeafultShape();
-		 * shapeTriangleDefConstructor.draw();
-		 */
 		
-		Shape shapeTriangleOverLoadedConstructor = 
+		 Shape shapeTriangleDefConstructor = context.getBean("newShape", Shape.class);
+		 shapeTriangleDefConstructor.createDeafultShape();
+		 shapeTriangleDefConstructor.draw();
+		
+		 Shape shapeTriangleOverLoadedConstructor = 
 				context.getBean("triangle",Shape.class);
-		shapeTriangleOverLoadedConstructor.computeArea();
-		shapeTriangleOverLoadedConstructor.computePerimeter();
-		((AbstractApplicationContext) context).close();
+		 shapeTriangleOverLoadedConstructor.computeArea();
+		 shapeTriangleOverLoadedConstructor.computePerimeter();
+		 
+		 ((AbstractApplicationContext) context).close();
 		
 	}
 }

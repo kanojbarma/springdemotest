@@ -5,6 +5,7 @@ import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.kanoj.geometry.service.CalculatorService;
@@ -14,6 +15,10 @@ public class Circle implements Shape {
 	
 	Point center;
 	int radius;
+	
+	@Value("${shape1}")
+	String shapeType;
+	
 	@Autowired
 	@Qualifier("circleCalculatorService")
 	private CalculatorService calculatorService;
@@ -39,10 +44,15 @@ public class Circle implements Shape {
 		radius = 5;
 		
 	}
+	
+	public String getShapeType() {
+		return shapeType + "(returned from properties file)";
+	}
 
 	public void draw() {
 		System.out.println(center);
 		System.out.println("Radius is " + radius);
+		System.out.println("Shape Type is " + getShapeType());
 	}
 
 	public CalculatorService calculatorService() {

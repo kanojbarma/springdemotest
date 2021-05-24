@@ -8,6 +8,7 @@ import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +20,10 @@ import com.kanoj.geometry.service.CalculatorService;
 public class Triangle implements Shape {
 
 	List<Point> points = new ArrayList<Point>();
-	String type;
+	
+	@Value("${shape2}")
+	String shapeType;
+	
 	@Autowired
 	@Qualifier("triangleCalculatorService")
 	private CalculatorService calculatorService;
@@ -38,13 +42,10 @@ public class Triangle implements Shape {
 	 * this.calculatorService= calculatorService; }
 	 */
 
-	public String getType() {
-		return type;
+	public String getShapeType() {
+		return shapeType + "(returned from properties file)";
 	}
 
-	public void setType(String type) {
-		this.type = type;
-	}
 	
 	public CalculatorService getCalculatorService() {
 		return calculatorService;
@@ -58,7 +59,7 @@ public class Triangle implements Shape {
 		for(Point point:points) {
 			System.out.println(point);
 		}
-		System.out.println("The triangle is of type: " + getType());
+		System.out.println("The triangle is of type: " + getShapeType());
 	}
 
 	public void createDeafultShape() {
