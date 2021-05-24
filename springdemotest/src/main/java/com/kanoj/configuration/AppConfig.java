@@ -3,11 +3,8 @@ package com.kanoj.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-//import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.PropertySource;
 
 import com.kanoj.geometry.Triangle;
-import com.kanoj.geometry.service.CalculatorService;
 
 /* This is the configuration class. This acts the spring XML configuration file.
  * Here we have to provide the base packages that it has to scan. All the beans under
